@@ -1,6 +1,5 @@
 
 import * as say from "../src/index.js";
-import Character from "../../constructors/src/index.js";
 
 test("new Bowerman", () => {
     const result = new Bowerman("Gena", 25, 25);
