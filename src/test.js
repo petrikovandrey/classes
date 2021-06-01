@@ -4,7 +4,13 @@ import * as index from "../src/index.js";
 test("new Bowerman", () => {
     const result = new index.Bowerman("Gena", "Bowerman");
     const expected =
-        { "health": 100, "level": 1, "name": "Gena", "attack": 25, "defence": 25 };
+    {
+        "attack": 25,
+        "defence": 25,
+        "health": 100,
+        "level": 1,
+        "name": "Gena",
+    }
     expect(result).toEqual(expected);
 })
 
