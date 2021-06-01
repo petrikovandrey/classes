@@ -2,13 +2,13 @@
 export class Character {
     constructor(name,type) {
         if (name.length < 2 || name.length > 10) {
-            throw new Error("Имя должно быть от 2 до 10 символов");
+            return new Error("Имя должно быть от 2 до 10 символов");
         }
         let typeCharacter = [
             "Bowman", "Swordsman", "Magician", "Daemon", "Undead", "Zombie"
         ];
         if (!typeCharacter.includes(type)) {
-            throw new Error("Тип персонажа не найден");
+            return new Error("Тип персонажа не найден");
         }
         this.name = name;
         this.health = 100;
