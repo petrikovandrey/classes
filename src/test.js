@@ -2,11 +2,12 @@
 import * as index from "../src/index.js";
 
 test("new Bowerman", () => {
-    const result = new index.Bowerman("Gena","Bowerman");
+    const result = new index.Bowerman("Gena", "Bowerman");
     const expected =
         { "health": 100, "level": 1, "name": "Gena", "attack": 25, "defence": 25 };
     expect(result).toEqual(expected);
 })
+
 test("levelUp Bowerman health = 0 ", () => {
     const person = new index.Bowerman("Gena", "Bowerman");
     person.health = 0;
@@ -22,17 +23,17 @@ test("level up Bowerman", () => {
     expect(person).toEqual(expected);
 })
 test("error name Character", () => {
-    const result = new Character("G", "Daemon");
+    const result = new index.Character("G", "Daemon");
     const expected = "Имя должно быть от 2 до 10 символов";
     expect(result).toThrow(expected);
 })
 test("error type Character", () => {
-    const result = new Character("Gena", "Мечник");
+    const result = new index.Character("Gena", "Мечник");
     const expected = "Тип персонажа не найден";
     expect(result).toThrow(expected);
 })
 test("damage ", () => {
-    const person = new Character("Тор", "Daemon");
+    const person = new index.Character("Тор", "Daemon");
     person.damage(99);
     const result = person.health;
     const expected = 40.6;
