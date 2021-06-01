@@ -9,6 +9,7 @@ test("new Bowerman", () => {
         "health": 100,
         "level": 1,
         "name": "Gena",
+        "type": "Bowerman"
     };
     expect(result).toEqual(expected);
 })
@@ -18,27 +19,25 @@ test("levelUp Bowerman health = 0 ", () => {
     person.health = 0;
     const result = person.levelUp();
     const expected = "нельзя повысить левел умершего";
-    expect(result).toEqual(expected);
+    expect(result).toBe(expected);
 })
 test("level up Bowerman", () => {
     const person = new index.Bowerman("Gena", "Bowerman");
     person.levelUp();
     const expected =
-        { "health": 100, "level": 2, "name": "Gena", "attack": 30, "defence": 30 };
+        { "health": 100, "level": 2, "name": "Gena", "attack": 30, "defence": 30 ,"type": "Bowerman"};
     expect(person).toEqual(expected);
 })
 test("error name Character", () => {
     const result = new index.Character("G", "Daemon");
-    const expected = "Имя должно быть от 2 до 10 символов";
-    expect(result).toThrow(expected);
+    expect(result).toThrow();
 })
 test("error type Character", () => {
     const result = new index.Character("Gena", "Мечник");
-    const expected = "Тип персонажа не найден";
-    expect(result).toThrow(expected);
+     expect(result).toThrow();
 })
-test("damage ", () => {
-    const person = new index.Character("Тор", "Daemon");
+test("damage point", () => {
+    const person = new index.Daemon("Тор", "Daemon");
     person.damage(99);
     const result = person.health;
     const expected = 40.6;
