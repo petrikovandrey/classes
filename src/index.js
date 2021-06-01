@@ -35,7 +35,7 @@ export class Bowerman extends Character {
         super(name);
         this.attack = 25;
         this.defence = 25;
-        this.type = "Bowerman";
+        // this.type = "Bowerman";
     }
 }
 
