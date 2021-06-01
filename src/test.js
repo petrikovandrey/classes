@@ -21,3 +21,20 @@ test("level up Bowerman", () => {
         { "health": 100, "level": 2, "name": "Gena", "attack": 30, "defence": 30 };
     expect(person).toEqual(expected);
 })
+test("error name Character", () => {
+    const result = new Character("r", "Daemon");
+    const expected = "Имя должно быть от 2 до 10 символов";
+    expect(result).toThrow(expected);
+})
+test("error type Character", () => {
+    const result = new Character("Tor", "Мечник");
+    const expected = "Тип персонажа не найден";
+    expect(result).toThrow(expected);
+})
+test("damage ", () => {
+    const person = new Character("Тор", "Daemon");
+    person.damage(99);
+    const result = person.health;
+    const expected = 40.6;
+    expect(result).toBe(expected);
+})
