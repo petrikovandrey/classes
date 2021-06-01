@@ -1,6 +1,6 @@
 
 export class Character {
-    constructor(name,type) {
+    constructor(name, type) {
         if (name.length < 2 || name.length > 10) {
             return "Имя должно быть от 2 до 10 символов";
         }
@@ -62,7 +62,7 @@ export class Daemon extends Character {
         super(name);
         this.attack = 10;
         this.defence = 40;
-        this.type   =  "Daemon";
+        this.type = "Daemon";
     }
 }
 

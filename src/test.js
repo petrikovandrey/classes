@@ -1,4 +1,3 @@
-
 import * as index from "../src/index.js";
 
 test("new Bowerman", () => {
@@ -10,7 +9,7 @@ test("new Bowerman", () => {
         "health": 100,
         "level": 1,
         "name": "Gena",
-    }
+    };
     expect(result).toEqual(expected);
 })
 
