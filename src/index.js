@@ -16,8 +16,8 @@ export class Character {
         this.type = type;
     }
     levelUp() {
-        if (this.health === 0) {
-            return "нельзя повысить левел умершего";
+        if (this.health <= 0) {
+            throw new Error("нельзя повысить левел умершего");
         }
         this.level += 1;
         this.attack += this.attack * 0.2;
